@@ -9,32 +9,19 @@
 	"@context" : "http://schema.org",
 	"@type" : "Organization",
 	"name" : "{$shop_name|escape:'html':'UTF-8'}",
-	"url" : "{if isset($force_ssl) && $force_ssl}{$base_dir_ssl}{else}{$base_dir}{/if}",
+	"url" : "{$link->getPageLink('index', true)|escape:'html':'UTF-8'}",
 	"logo" : {
 		"@type":"ImageObject",
 		"url":"{$logo_url}"
 	}
 }
 </script>
-<script type="application/ld+json">
-{
-	"@context":"http://schema.org",
-	"@type":"WebPage",
-	"isPartOf": {
-		"@type":"WebSite",
-		"url":  "{if isset($force_ssl) && $force_ssl}{$base_dir_ssl}{else}{$base_dir}{/if}",
-		"name": "{$shop_name|escape:'html':'UTF-8'}"
-    },
-	"name": "{$meta_title}",
-	"url":  "{if isset($force_ssl) && $force_ssl}{$base_dir_ssl}{trim($smarty.server.REQUEST_URI,'/')}{else}{$base_dir}{trim($smarty.server.REQUEST_URI,'/')}{/if}"
-}
-</script>
-{if $page_name =='index'}
+
 <script type="application/ld+json">
 {
 	"@context": "http://schema.org",
 	"@type":  "WebSite",
-	"url":  "{if isset($force_ssl) && $force_ssl}{$base_dir_ssl}{else}{$base_dir}{/if}",
+	"url":  "{$link->getPageLink('index', true)|escape:'html':'UTF-8'}",
 	"image" : {
 	"@type":  "ImageObject",
 	"url":  "{$logo_url}"
@@ -46,7 +33,21 @@
 	}
 }
 </script>
-{/if}
+
+<script type="application/ld+json">
+{
+	"@context":"http://schema.org",
+	"@type":"WebPage",
+	"isPartOf": {
+		"@type":"WebSite",
+		"url":  "{$link->getPageLink('index', true)|escape:'html':'UTF-8'}",
+		"name": "{$shop_name|escape:'html':'UTF-8'}"
+    },
+	"name": "{$meta_title}",
+	"url":  "{if isset($force_ssl) && $force_ssl}{$base_dir_ssl}{trim($smarty.server.REQUEST_URI,'/')}{else}{$base_dir}{trim($smarty.server.REQUEST_URI,'/')}{/if}"
+}
+</script>
+
 
 {if $page_name == 'product'}
 <script type="application/ld+json">
@@ -54,7 +55,7 @@
 	"@context": "http://schema.org/",
 	"@type": "Product",
 	"name": "{$product->name}",
-	"image": "{$link->getImageLink($product->link_rewrite, $cover.id_image, 'home_default')|escape:'html':'UTF-8'}",
+	"image": "{$link->getImageLink($product->link_rewrite, $cover.id_image, 'large_default')|escape:'html':'UTF-8'}",
 	"description": "{$product->description_short|strip_tags|escape:'html':'UTF-8'}",
 	{if $product->reference}
 	"mpn": "{$product->reference|escape:'html':'UTF-8'}",
