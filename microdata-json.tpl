@@ -3,6 +3,7 @@
 * Add this code in your smarty global.tpl/header.tpl file to show Organization, WebPage, Website and Product Microdata in ld+json format.
 * Requires Prestashop 'productcomments' module for review stars ratings.
 * by Ruben Divall @rubendivall http://www.rubendivall.com 
+* Module by @atomiksoft: https://addons.prestashop.com/en/seo-natural-search-engine-optimization/24511-microformats-in-ldjson.html
 *}
 <script type="application/ld+json">
 {
