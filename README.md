@@ -1,11 +1,8 @@
 # PrestaShop-SEO-Snippets
-Various snippets to imporve SEO in Prestashop
+Various snippets to imporve microdata on page and SEO in Prestashop 1.6.X and 1.7
 
-Show Json+LD Snippet of:
-- Product combinations prices, EAN-13 (0+UPC otherwise), stock
-- Site and organization Microformat
 
-Adds all these microdata in JSON+LD:
+Adds all these microdata snippet in JSON+LD:
 - Product [for each combination: prices, EAN-13 (0+UPC otherwise), stocks] with reviews by Prestashop Product Comments.
 - WebPage
 - WebSite
