@@ -1,5 +1,5 @@
 # PrestaShop-SEO-Snippets
-Various snippets to imporve microdata on page and SEO in Prestashop 1.6.X and 1.7
+Various snippets to improve microdata on page and SEO in Prestashop 1.6.X and 1.7
 
 
 Adds all these microdata snippet in JSON+LD:
@@ -8,4 +8,4 @@ Adds all these microdata snippet in JSON+LD:
 - WebSite
 - Organization
 
-Module donwload: https://addons.prestashop.com/en/seo-natural-search-engine-optimization/24511-microformats-in-ldjson.html
+Module download: https://addons.prestashop.com/en/seo-natural-search-engine-optimization/24511-microformats-in-ldjson.html
