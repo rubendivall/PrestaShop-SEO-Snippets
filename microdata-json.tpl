@@ -89,12 +89,12 @@
     }
     {else}
     "offers": [
-      {foreach key=atomik item=combination from=$combinations}
+      {foreach key=id_product_combination item=combination from=$combinations}
         {
         "@type": "Offer",
         "name": "{$product->name|escape:'html':'UTF-8'} - {$combination.reference}",
         "priceCurrency": "{$currency->iso_code|escape:'html':'UTF-8'}",
-        "price": "{$combination.finalprice|round:'2'}",
+        "price": "{Product::getPriceStatic($product->id, true, $id_product_combination)|round:'2'}",
         "image": "{if $combination.id_image > 0}{$link->getImageLink($product->link_rewrite, $combination.id_image, 'home_default')|escape:'html':'UTF-8'}{else}{$link->getImageLink($product->link_rewrite, $cover.id_image, 'home_default')|escape:'html':'UTF-8'}{/if}",
         {if $combination.ean13}
         "gtin13": "{$combination.ean13|escape:'html':'UTF-8'}",
